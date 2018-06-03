@@ -1,0 +1,26 @@
+---
+- name: Uninstall java
+  expect:
+    command: |
+      brew tap caskroom/versions
+      brew update
+      brew cask uninstall --force java
+      brew cask uninstall --force java8
+    timeout: 600
+    responses:
+      (?i)password: "{{ sudo_password }}"
+
+- name: Install java8
+  expect:
+    command: |
+      brew cask install java8
+    timeout: 600
+    responses:
+      (?i)password: "{{ sudo_password }}"
+
+
+- name: Install java8
+  shell: |
+    launchctl unload /Users/jenkins/Library/LaunchAgents/com.gree.toybox.jenkins.slave.plist
+    launchctl load /Users/jenkins/Library/LaunchAgents/com.gree.toybox.jenkins.slave.plist
+

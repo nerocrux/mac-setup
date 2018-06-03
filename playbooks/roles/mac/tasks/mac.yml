@@ -1,0 +1,24 @@
+---
+- copy:
+    src: ../files/.zshrc
+    dest: "{{ ansible_user_dir }}/.zshrc"
+
+- copy:
+    src: ../files/.zshenv
+    dest: "{{ ansible_user_dir }}/.zshenv"
+
+- copy:
+    src: ../files/.screenrc
+    dest: "{{ ansible_user_dir }}/.screenrc"
+
+- copy:
+    src: ../files/.vimrc
+    dest: "{{ ansible_user_dir }}/.vimrc"
+
+- name: Config ntpd
+  become: yes
+  shell: |
+    /usr/sbin/systemsetup -setnetworktimeserver 'ntp.nict.jp'
+    /usr/sbin/systemsetup -setusingnetworktime on
+    ntpq -p
+  tags: [server, asset-build, hockey-build]

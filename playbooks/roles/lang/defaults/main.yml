@@ -1,0 +1,34 @@
+---
+gem_packages:
+  - { name: bundler }
+  - { name: git-pr-release }
+  - { name: lunchy }
+
+go_packages:
+  - { name: websocket, path: github.com/gorilla/websocket }
+
+npm_packages:
+  - { name: n }
+  - { name: webpack }
+
+pip_packages:
+  - { name: ansible }
+  - { name: ansible_lint }
+  - { name: pexpect }
+  - { name: awscli }
+  - { name: pillow }
+  - { name: xlrd }
+  - { name: tinycss }
+  - { name: neo4jrestclient }
+  - { name: boxsdk }
+  - { name: deepdiff }
+  - { name: jinja2 }
+  - { name: joblib }
+  - { name: pycrypto }
+  - { name: mod_pbxproj==1.3.1 }
+  - { name: argparse }
+  - { name: graphviz }
+  - { name: more_itertools }
+  - { name: daff }
+  - { name: neo4j-driver }
+  - { name: msgpack }

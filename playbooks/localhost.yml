@@ -1,0 +1,8 @@
+---
+- name: Init Setup Remote MacBook (localhost)
+  hosts: localhost
+  roles:
+    - { role: homebrew }
+    - { role: lang }
+    - { role: env, tags: [ localhost ] }
+    - { role: mac, tags: [ localhost ] }
