@@ -146,9 +146,9 @@ esac
 [ -e "${HOME}/.ssh/agent-env" ] && . "${HOME}/.ssh/agent-env"
 
 
-alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -al'
+alias la='ls -ah'
+alias ll='ls -lh'
+alias lla='ls -alh'
 alias grep='egrep'
 
 #reload zshrc
@@ -220,34 +220,11 @@ alias scl="screen -ls"
 alias scd="screen -d"
 alias scr="screen -r"
 
-#irssi
-alias irssi='env TERM=screen-256color irssi'
-
-#php
-alias tlog='tail -f /var/log/php.log'
-alias vlog='vi /var/log/php.log'
-
-#python
-alias py32='VERSIONER_PYTHON_PREFER_32_BIT=yes /usr/bin/python'
-alias runskypebot='py32 ~/Dropbox/GREE/cli/skypebot.py'
-
-#emacs
-alias em='emacs-23.3'
-
-#pip for python 2.7
-alias pip2='/usr/local/bin/pip'
-
-#wayterm
-alias wayterm='~/Work/wayterm/wayterm'
-
-#sudo
-alias sudophpunit='sudo env PATH=$PATH phpunit'
-
 #stop correct
 alias td='nocorrect td'
 
-#tmux
-#alias tmux='tmux attach-session'
+#kubernetes
+alias kc='kubectl'
 #==============================================
 
 #use 256 color
@@ -287,6 +264,7 @@ function rprompt-git-current-branch {
 RPROMPT='`rprompt-git-current-branch`'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/bin
 
 #go
 GOPATH=$HOME/go
